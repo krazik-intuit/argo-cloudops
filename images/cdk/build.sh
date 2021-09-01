@@ -27,7 +27,7 @@ mkdir -p $build_dir
 
 cp Dockerfile $build_dir
 cp requirements.txt $build_dir
-cp ../shared/setup.sh $build_dir
+cp ../shared/* $build_dir
 
 cd $build_dir
 
@@ -37,5 +37,7 @@ tags="-t $repo:$cdk_version -t $repo:latest"
 
 docker build . --no-cache $tags
 
-docker push $repo:$cdk_version
-docker push $repo:latest
+if [ -z $ARGO_CLOUDOPS_LOCAL_DOCKER ]; then
+    docker push $repo:$cdk_version
+    docker push $repo:latest
+fi

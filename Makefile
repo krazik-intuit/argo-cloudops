@@ -36,4 +36,7 @@ clean_cli:
 up: ## Starts a local vault and api locally
 	bash scripts/start_local.sh
 
-.PHONY: build_service build_cli lint test tidy cover clean_cli clean_service up
+images:
+	cd images; $(MAKE)
+
+.PHONY: build_service build_cli lint test tidy cover clean_cli clean_service up images

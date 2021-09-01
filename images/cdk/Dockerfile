@@ -58,7 +58,7 @@ RUN mkdir -p /vault/logs && \
 LABEL cdk_version={{CDK_VERSION}}
 
 RUN mkdir /work ~/.aws
-COPY ./setup.sh /usr/local/bin/
+COPY ./*.sh /usr/local/bin/
 COPY ./requirements.txt /work
 WORKDIR /work
 

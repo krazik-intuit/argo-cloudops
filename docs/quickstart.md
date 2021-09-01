@@ -85,14 +85,14 @@ the Argo CloudOps service.
 * Start the Argo CloudOps Service (includes vault)
 
     ```sh
-    make ; make up
+    make && make up
     ```
 
 * To run in debug mode set log level DEBUG before running
 
     ```
     export ARGO_CLOUDOPS_LOG_LEVEL=DEBUG
-    make ; make up
+    make && make up
     ```
 
 ### Create Argo CloudOps Project And Target (One Time Setup)

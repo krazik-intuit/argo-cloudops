@@ -21,7 +21,7 @@ fi
 
 build_dir=$TMPDIR/docker-terraform
 
-\rm -rf $build_dir
+rm -rf $build_dir
 
 mkdir -p $build_dir
 
@@ -37,5 +37,7 @@ tags="-t $repo:$terraform_version -t $repo:latest"
 
 docker build . --no-cache $tags
 
-docker push $repo:$terraform_version
-docker push $repo:latest
+if [ -z $ARGO_CLOUDOPS_LOCAL_DOCKER ]; then
+    docker push $repo:$terraform_version
+    docker push $repo:latest
+fi

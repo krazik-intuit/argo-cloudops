@@ -61,7 +61,7 @@ RUN mkdir -p /vault/logs && \
 LABEL terraform_version={{TERRAFORM_VERSION}}
 
 RUN mkdir /work ~/.aws
-COPY ./setup.sh /usr/local/bin/
+COPY ./*.sh /usr/local/bin/
 COPY ./requirements.txt /work
 WORKDIR /work
 
